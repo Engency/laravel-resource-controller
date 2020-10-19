@@ -12,10 +12,10 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-#      - restore_cache:
-#          keys:
-#            - v1-dependencies-{{ checksum "composer.lock" }}
-#            - v1-dependencies-
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.lock" }}
+            - v1-dependencies-
       - run: composer install --ignore-platform-reqs --no-interaction --no-scripts
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.lock" }}
