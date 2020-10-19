@@ -3,8 +3,6 @@
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
 version: 2
-orbs:
-  codecov: codecov/codecov@1.1.1
 jobs:
   code_quality:
     docker:
@@ -34,9 +32,6 @@ jobs:
       # Upload test results
       - store_artifacts:
           path: ~/phpunit
-
-      - codecov/upload:
-          file: ~/phpunit/coverage.xml
 
 workflows:
   version: 2
