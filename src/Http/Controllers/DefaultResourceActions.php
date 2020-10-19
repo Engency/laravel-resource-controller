@@ -10,6 +10,7 @@ use Engency\Http\Controllers\DefaultResourceActions\DefaultShow;
 use Engency\Http\Controllers\DefaultResourceActions\DefaultStore;
 use Engency\Http\Controllers\DefaultResourceActions\DefaultUpdate;
 use Engency\Http\Response\Response;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -26,7 +27,7 @@ trait DefaultResourceActions
 
     /**
      * @param Request $request
-     * @return \Illuminate\Database\Eloquent\Builder|Collection|\Illuminate\Database\Query\Builder
+     * @return Builder|Collection|\Illuminate\Database\Query\Builder
      */
     protected abstract function getScope(Request $request);
 

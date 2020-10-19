@@ -23,6 +23,6 @@ class ResourceServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../resouces/lang', 'resource-controller');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'resource-controller');
     }
 }

@@ -1,7 +1,9 @@
 <?php
+
 /**
  * @noinspection PhpDocMissingThrowsInspection
  * @noinspection PhpUnhandledExceptionInspection
+ * @noinspection PhpMissingFieldTypeInspection
  */
 
 namespace Engency\Test;
@@ -11,6 +13,7 @@ use Engency\Http\Controllers\ResourceController;
 use Engency\Http\Response\Notice;
 use Engency\Http\Response\Response;
 use Illuminate\Container\Container;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
@@ -25,6 +28,7 @@ class User extends Model
         'name'
     ];
 
+    /** @noinspection PhpUnusedParameterInspection */
     public function validateAndUpdate(array $data, string $occasion)
     {
         $this->attributes = $data;
@@ -54,7 +58,8 @@ class UserController extends ResourceController
 
     /**
      * @param Request $request
-     * @return \Illuminate\Database\Eloquent\Builder|Collection|\Illuminate\Database\Query\Builder
+     * @return Builder|Collection|\Illuminate\Database\Query\Builder
+     * @noinspection PhpUnusedParameterInspection
      */
     protected function getScope(Request $request)
     {
@@ -62,7 +67,7 @@ class UserController extends ResourceController
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder|Collection
+     * @return Builder|\Illuminate\Database\Query\Builder|Collection
      */
     public function testScope()
     {

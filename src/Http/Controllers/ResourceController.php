@@ -110,6 +110,8 @@ abstract class ResourceController extends BaseController
     /**
      * @param Request $request
      * @return Model
+     * @noinspection PhpDocMissingThrowsInspection
+     * @noinspection PhpUnhandledExceptionInspection
      */
     protected function getResourceInstance(Request $request) : Model
     {

@@ -2,6 +2,7 @@
 
 namespace Engency\Http\Resource;
 
+use Exception;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 
@@ -49,7 +50,7 @@ trait ResourceNaming
         try {
             // todo add resource translations
             return Lang::get('resources.' . $this->getResourceName() . $exportFormat);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return 'resources.' . $this->getResourceName() . $exportFormat;
         }
     }

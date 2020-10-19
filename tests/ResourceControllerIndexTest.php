@@ -66,6 +66,7 @@ class ResourceControllerIndexTest extends BaseTestCase
         );
 
         $this->assertInstanceOf(Response::class, $response);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertEquals($newName, $instance->name);
         $this->assertArrayNotHasKey($invalidAttribute, $instance->getAttributes());
         $this->assertHasNotice($response, 'success', 'Resource-controller:messages.updated');

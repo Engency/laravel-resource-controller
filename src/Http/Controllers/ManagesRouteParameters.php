@@ -64,6 +64,7 @@ trait ManagesRouteParameters
         $managedResource = $this->getManagedResource();
         $propertyName    = $managedResource->getResourceName('camel');
         if (property_exists($this, $propertyName)) {
+            /** @noinspection PhpUnhandledExceptionInspection */
             $managedResource->setInstance($this->{$propertyName});
 
             return;
