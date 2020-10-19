@@ -1,0 +1,45 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+orbs:
+  codecov: codecov/codecov@1.1.1
+jobs:
+  code_quality:
+    docker:
+      - image: cimg/php:7.4.11
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.lock" }}
+            - v1-dependencies-
+      - run: composer install --ignore-platform-reqs --no-interaction --no-scripts
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.lock" }}
+          paths:
+            - ./vendor
+
+      - run:
+          name: Running PHPUnit
+          command: |
+            mkdir -p ~/phpunit
+            vendor/bin/phpunit --configuration=tests/phpunit.xml --log-junit ~/phpunit/junit.xml --coverage-clover=~/phpunit/coverage.xml
+          when: always
+
+      # Upload test results
+      - store_artifacts:
+          path: ~/phpunit
+
+      - codecov/upload:
+          file: ~/phpunit/coverage.xml
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - code_quality
