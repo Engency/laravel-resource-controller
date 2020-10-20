@@ -27,8 +27,8 @@
     "engency/laravel-model-validation": "^0.1.0"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.5",
-    "phpunit/phpunit": "^9.4"
+    "squizlabs/php_codesniffer": "3.5.6",
+    "phpunit/phpunit": "9.4.2"
   },
   "autoload": {
     "psr-4": {
