@@ -57,5 +57,4 @@ trait DefaultStore
                 fn(array $data) => $this->exportDataContainingItemForJsonResponse($request, $data)
             );
     }
-
 }

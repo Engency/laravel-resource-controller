@@ -22,5 +22,4 @@ trait DefaultCreate
     {
         return $this->success($this->getAttributesFromScope(), $this->getViewForAction('create'));
     }
-
 }

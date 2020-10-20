@@ -22,14 +22,13 @@
     "illuminate/http": "^8.0",
     "illuminate/routing": "^8.0",
     "illuminate/database": "^8.0",
+    "illuminate/view": "^8.10",
     "engency/eloquent-formatting": "^0.1.0",
-    "engency/laravel-model-validation": "^0.1.0",
-    "illuminate/view": "^8.10"
+    "engency/laravel-model-validation": "^0.1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5",
-    "phpunit/phpunit": "^9.4",
-    "mockery/mockery": "^1.4"
+    "phpunit/phpunit": "^9.4"
   },
   "autoload": {
     "psr-4": {
@@ -48,13 +47,14 @@
       ]
     },
     "branch-alias": {
-      "dev-master": "0.1-dev"
+      "dev-master": "0.2-dev"
     }
   },
   "scripts": {
-    "check-style": "phpcs -p --standard=psr2 src/",
-    "fix-style": "phpcbf -p --standard=psr2 src/"
+    "check-style": "vendor/bin/phpcs -p --standard=psr2 src/",
+    "fix-style": "vendor/bin/phpcbf -p --standard=psr2 src/",
+    "unittest": "vendor/bin/phpunit --configuration=tests/phpunit.xml"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }

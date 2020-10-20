@@ -29,7 +29,7 @@ trait DefaultResourceActions
      * @param Request $request
      * @return Builder|Collection|\Illuminate\Database\Query\Builder
      */
-    protected abstract function getScope(Request $request);
+    abstract protected function getScope(Request $request);
 
     abstract protected function getAttributesFromScope(?bool $onlyIdentifiers = true) : array;
 
@@ -44,5 +44,4 @@ trait DefaultResourceActions
     abstract protected function success($data = [], string $view = '') : Response;
 
     abstract protected function failure(int $httpErrorCode = 406) : Response;
-
 }

@@ -81,7 +81,6 @@ class Response implements Responsable
         }
 
         return $this->doShowView();
-
     }
 
     /**
@@ -101,5 +100,4 @@ class Response implements Responsable
     {
         return $this->data;
     }
-
 }

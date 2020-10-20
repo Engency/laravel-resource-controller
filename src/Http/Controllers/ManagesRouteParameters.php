@@ -49,7 +49,8 @@ trait ManagesRouteParameters
             }
 
             if ($value instanceof Model) {
-                $data[$onlyIdentifiers ? ucfirst($key) : $key] = $onlyIdentifiers ? $value->{$value->getKeyName()} : $value;
+                $data[$onlyIdentifiers ? ucfirst($key) : $key] =
+                    $onlyIdentifiers ? $value->{$value->getKeyName()} : $value;
             }
         }
 

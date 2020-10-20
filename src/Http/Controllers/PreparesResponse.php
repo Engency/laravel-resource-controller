@@ -6,6 +6,8 @@ use Engency\Http\ManagedResource;
 use Engency\Http\Response\Response;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Illuminate\Http\Response as IlluminateResponse;
 
 trait PreparesResponse
 {
@@ -34,7 +36,7 @@ trait PreparesResponse
     {
         if ($response instanceof Response) {
             return $response;
-        } elseif ($response instanceof \Illuminate\Http\Response || $response instanceof \Symfony\Component\HttpFoundation\Response) {
+        } elseif ($response instanceof IlluminateResponse || $response instanceof SymfonyResponse) {
             return $response;
         } elseif (is_array($response)) {
             return $this->prepareArrayResponse($method, $response);

@@ -38,5 +38,4 @@ trait DefaultIndex
                 fn(array $data) => $this->exportDataContainingListForJsonResponse($request, $data)
             );
     }
-
 }

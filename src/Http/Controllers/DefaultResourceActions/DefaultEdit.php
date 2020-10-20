@@ -30,5 +30,4 @@ trait DefaultEdit
                 fn(array $data) => $this->exportDataContainingItemForJsonResponse($request, $data)
             );
     }
-
 }

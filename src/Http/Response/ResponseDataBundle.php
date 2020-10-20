@@ -57,8 +57,11 @@ class ResponseDataBundle implements Arrayable
             $firstKey = array_key_first($this->data);
             if ($firstKey === self::$itemsKey) {
                 return $this->data[self::$itemsKey];
-            } elseif (( $item = $this->data[$firstKey] ) instanceof Model && Str::camel(class_basename($item)) === $firstKey) {
-                return $this->exportItemForJsonResponse($item);
+            }
+
+            $attIsModel = $this->data[$firstKey] instanceof Model;
+            if ($attIsModel && Str::camel(class_basename($this->data[$firstKey])) === $firstKey) {
+                return $this->exportItemForJsonResponse($this->data[$firstKey]);
             }
         }
 

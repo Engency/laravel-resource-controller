@@ -61,5 +61,4 @@ trait DefaultUpdate
                 fn(array $data) => $this->exportDataContainingItemForJsonResponse($request, $data)
             );
     }
-
 }

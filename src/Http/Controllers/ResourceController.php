@@ -180,5 +180,4 @@ abstract class ResourceController extends BaseController
     {
         return Container::getInstance()->make('url');
     }
-
 }

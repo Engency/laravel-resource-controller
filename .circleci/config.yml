@@ -29,6 +29,10 @@ jobs:
             vendor/bin/phpunit --configuration=tests/phpunit.xml --log-junit ~/phpunit/junit.xml --coverage-clover=~/phpunit/coverage.xml
           when: always
 
+      - run:
+          name: Running Code Sniffer
+          command: composer check-style
+
       # Upload test results
       - store_artifacts:
           path: ~/phpunit
