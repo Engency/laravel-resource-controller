@@ -39,7 +39,7 @@ trait CanRedirect
     /**
      * @param string $routeName
      * @param array  $parameters
-     * @return CanRedirect
+     * @return $this
      */
     public function redirectTo(string $routeName, array $parameters = [])
     {
