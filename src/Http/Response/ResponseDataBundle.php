@@ -73,11 +73,33 @@ class ResponseDataBundle implements Arrayable
         if (isset($this->customDataFormat) && $item instanceof ExportsCustomDataFormats) {
             return $item->toArrayFormat($this->customDataFormat);
         } elseif ($item instanceof LengthAwarePaginator) {
-            return $item->items();
+            if (method_exists($item, 'toArray')) {
+                $data         = $item->toArray();
+                $data['data'] = $this->exportToCustomDataFormat($item->items());
+
+                return $data;
+            }
+
+            return $item;
         } elseif ($item instanceof Arrayable) {
-            return $item->toArray();
+            return $this->exportToCustomDataFormat($item->toArray());
         } else {
             return $item;
         }
+    }
+
+    /**
+     * @param Arrayable|array $items
+     * @return array
+     */
+    private function exportToCustomDataFormat($items) : array
+    {
+        return collect($items)->map(function ($subItem) {
+            if ($subItem instanceof ExportsCustomDataFormats) {
+                return $subItem->toArrayFormat($this->customDataFormat);
+            }
+
+            return $subItem->toArray();
+        })->toArray();
     }
 }
