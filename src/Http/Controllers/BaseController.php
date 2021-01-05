@@ -4,14 +4,17 @@ namespace Engency\Http\Controllers;
 
 use Engency\Http\Response\DefaultResponse;
 use Engency\Http\Response\Response;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
 
 abstract class BaseController extends Controller
 {
     /**
-     * @param array  $data
-     * @param string $view
+     * @param array|Collection|LengthAwarePaginator|Model|null $data
+     * @param string                                           $view
      *
      * @return Response
      */
