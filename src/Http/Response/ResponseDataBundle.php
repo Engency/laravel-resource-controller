@@ -56,7 +56,7 @@ class ResponseDataBundle implements Arrayable
         if (count($this->data) === 1) {
             $firstKey = array_key_first($this->data);
             if ($firstKey === self::$itemsKey) {
-                return $this->data[self::$itemsKey];
+                return $this->exportItemForJsonResponse($this->data[self::$itemsKey]);
             }
 
             $attIsModel = $this->data[$firstKey] instanceof Model;
