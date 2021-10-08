@@ -99,7 +99,7 @@ class ResponseDataBundle implements Arrayable
                 return $subItem->toArrayFormat($this->customDataFormat);
             }
 
-            if(property_exists($subItem, 'toArray')) {
+            if (property_exists($subItem, 'toArray')) {
                 return $subItem->toArray();
             }
 
