@@ -74,10 +74,10 @@ class Response implements Responsable
                 return $this->doShowBinaryInline();
             case $this->canDownload():
                 return $this->doDownload();
-            case $this->canRedirect():
-                return $this->doRedirect();
             case $this->canShowJson($request):
                 return $this->doShowJson();
+            case $this->canRedirect():
+                return $this->doRedirect();
         }
 
         return $this->doShowView();
