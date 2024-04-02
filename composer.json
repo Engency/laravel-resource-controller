@@ -23,7 +23,7 @@
     "illuminate/routing": "^8.0|^9.0",
     "illuminate/database": "^8.0|^9.0",
     "illuminate/view": "^8.0|^9.0",
-    "engency/eloquent-formatting": "^0.3.0",
+    "engency/eloquent-formatting": "^0.4.0",
     "engency/laravel-model-validation": "^0.2.0"
   },
   "require-dev": {
