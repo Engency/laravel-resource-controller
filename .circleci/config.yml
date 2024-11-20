@@ -6,7 +6,7 @@ version: 2
 jobs:
   code_quality:
     docker:
-      - image: cimg/php:8.3.13
+      - image: cimg/php:8.4.1
 
     steps:
       - checkout
