@@ -28,7 +28,7 @@
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.13.5",
-    "phpunit/phpunit": "9.6.29"
+    "phpunit/phpunit": "9.6.34"
   },
   "autoload": {
     "psr-4": {
