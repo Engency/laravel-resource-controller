@@ -19,10 +19,10 @@
   ],
   "require": {
     "php": "^7.4|^8.0",
-    "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+    "illuminate/http": "13.30.1",
     "illuminate/routing": "^8.0|^9.0|^10.0|^11.0",
     "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
-    "illuminate/view": "^8.0|^9.0|^10.0|^11.0",
+    "illuminate/view": "13.30.1",
     "engency/eloquent-formatting": "^0.4.1",
     "engency/laravel-model-validation": "^0.3.1"
   },
